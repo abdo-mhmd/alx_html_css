@@ -137,6 +137,21 @@ aside {
     margin-bottom: 5px;
 }
 
+#head {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.col {
+    flex: 1;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
 /* Media queries */
 
 @media screen and (max-width: 768px) {
@@ -155,5 +170,13 @@ aside {
 
     aside {
         margin-top: 10px;
+    }
+
+    .row {
+        flex-wrap:initial;
+    }
+
+    .row .col {
+        width: 48%;
     }
 }
