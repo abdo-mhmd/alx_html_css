@@ -22,5 +22,17 @@ aside {
 .logo {
     font-size: 24px;
     text-decoration: none;
-    color: #000;
+    color: #f8f4f4;
+}
+
+.nvbar {
+    border-color: black ;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: visible;
+    height: auto !important;
+    position: fixed;
+    width: 100%;
+
+
 }
