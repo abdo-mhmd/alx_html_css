@@ -512,14 +512,14 @@ ul.row {
     padding: var(--section-header-padding);
 }
 
-.section-services,
+/*.section-services,
 .section-works,
 .section-about-us,
 .section-latest-news,
 .section-testimonial,
 .section-contact {
-    padding: 5rem 0;
-}
+    padding: var(--section-padding);
+}*/
 
 .section-title {
     font-size: var(--section-title-font-size);
