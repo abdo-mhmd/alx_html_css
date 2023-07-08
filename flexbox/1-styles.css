@@ -373,8 +373,9 @@ a:active {
       ============================= */
 .row {
     display: flex;
-    margin: 0;
-    padding: 0;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 ul.row {
@@ -384,8 +385,17 @@ ul.row {
     display: flex;
 }
 
+/*.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}*/
+
 [class*='col-'] {
+    /* float: left;*/
     padding: 0.5rem;
+    flex: 1 0 0%;
+    margin-bottom: 20px;
 }
 
 .col-1-3 {
@@ -511,15 +521,6 @@ ul.row {
     text-align: var(--section-header-align);
     padding: var(--section-header-padding);
 }
-
-/*.section-services,
-.section-works,
-.section-about-us,
-.section-latest-news,
-.section-testimonial,
-.section-contact {
-    padding: var(--section-padding);
-}*/
 
 .section-title {
     font-size: var(--section-title-font-size);
