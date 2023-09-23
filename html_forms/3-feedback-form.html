@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription</title>
+</head>
+
+<body>
+    <form class="check-form">
+        <fieldset>
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name" required><br>
+            <label for="email">Email Address</label><br>
+            <input type="email" name="email" id="email" required><br>
+            <label>Feedback</label><br>
+            <input id="excellent" type="checkbox" name="excellent" value="excellent">
+            <label for="excellent">excellent</label><br>
+            <input id="good" type="checkbox" name="good" value="good">
+            <label for="good">good</label><br>
+            <input id="average" type="checkbox" name="average" value="average">
+            <label for="average">average</label><br>
+            <input id="poor" type="checkbox" name="poor" value="poor">
+            <label for="poor">poor</label><br>
+            <br>
+            <label for="file">Upload a file</label><br>
+            <input type="file" name="file" id="file"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <script>
+        const form = document.querySelector('.check-form');
+
+        form.addEventListener('submit', (e) => {
+            const checkbox = form.querySelectorAll('input[type=checkbox]');
+            const email = form.email.value;
+            const file = form.file.value;
+            if (!email.includes('@') && !email.includes('.')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            if (!file) {
+                alert('Please select a file');
+                return false;
+            }
+            let i = 0;
+
+            while (i < checkbox.length) {
+                if (checkbox[i].checked == false) {
+                    i++;
+                } else {
+                    break;
+                }
+            }
+            if (i == checkbox.length) {
+                alert('Please select at least one feedback');
+                return false;
+            }
+            alert('Form submitted successfully');
+            return true;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription</title>
+</head>
+
+<body>
+    <form class="subscription-form">
+        <fieldset>
+            <legend>Subscription</legend>
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name" required><br>
+            <label for="email">Email Address</label><br>
+            <input type="email" name="email" id="email" required><br>
+            <label>Subscription</label><br>
+            <input type="radio" name="subscription" value="monthly" checked>monthly<br>
+            <input type="radio" name="subscription" value="yearly">yearly<br>
+            
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <script>
+        const form = document.querySelector('.subscription-form');
+        
+        form.addEventListener('submit', (e) => {
+            const name = form.name.value;
+            const email = form.email.value;
+
+            if (!email.includes('@') && !email.includes('.')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            alert('Form submitted successfully');
+            return true;
+        });
+    </script>
+</body>
+
+</html>

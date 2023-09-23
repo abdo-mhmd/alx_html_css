@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <form class="login-form">
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id="name" required><br>
+        <label for="email">Email Address</label><br>
+        <input type="email" name="email" id="email" required><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="password" required><br>
+        <label for="confirmpassword">Confirm Password</label><br>
+        <input type="password" name="confirmpassword" id="confirmpassword" required><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const form = document.querySelector('.login-form');
+
+        form.addEventListener('submit', (e) => {
+            const password = form.password.value;
+            const confirmPassword = form.confirmPassword.value;
+            const email = form.email.value;
+            if (!email.includes('@') && !email.includes('.')) {
+                alert('Please enter a valid email address');
+            }
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return false;
+            }
+            alert('Form submitted successfully');
+            return true;
+        });
+
+    </script>
+</body>
+
+</html>

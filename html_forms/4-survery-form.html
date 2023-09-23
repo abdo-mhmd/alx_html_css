@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown</title>
+</head>
+<body>
+    <form class="dropdown-form">
+        <fieldset>
+            <legend>dropdown</legend>
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name" required><br>
+            <label for="email">Email Address</label><br>
+            <input type="email" name="email" id="email" required><br>
+            <label for="colors">Favorite Color</label><br>
+            <select name="favoriteColor" id="colors">
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+                <option value="green">green</option>
+            </select>
+            <br>
+            <label for="time">Time</label><br>
+            <input type="time" name="time" id="time"><br>
+            <label for="date">Date</label><br>
+            <input type="date" name="date" id="date"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    <script>
+        const form = document.querySelector('.dropdown-form');
+        form.addEventListener('submit', () => {
+            const favoriteColor = form.favoriteColor.value;
+            const time = form.time.value;
+            const date = form.date.value;
+            const email = form.email.value;
+            if (!email.includes('@') && !email.includes('.')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            if (!favoriteColor || !time || !date) {
+                alert('Please fill out all fields');
+                return false;
+            }
+            alert('Form submitted successfully');
+            return true;
+        });
+    </script>
+</body>
+</html>
